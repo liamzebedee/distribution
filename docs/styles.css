@@ -9,9 +9,9 @@ html {
 body { margin: 0; }
 main { width: min(100% - 48px, 1200px); margin: 0 auto; }
 .masthead { padding: 48px 0 24px; }
-h1, h2 { line-height: 1.2; letter-spacing: -1px; font-weight: 800; }
-h1 { margin: 0; font-size: 2rem; }
-h2 { margin: 0 0 14px; font-size: 1.6rem; }
+h1, h2 { font-size: 1rem; line-height: 1.5; font-weight: 800; }
+h1 { margin: 0; }
+h2 { margin: 0 0 8px; }
 .product { border-top: 1px solid #e8e8e8; padding: 32px 0 48px; }
 .product-copy { margin-bottom: 20px; }
 .downloads { display: flex; flex-wrap: wrap; gap: 8px 24px; }
