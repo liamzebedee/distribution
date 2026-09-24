@@ -12,20 +12,38 @@
   <div class="product-shell">
     <a class="back" href="../" aria-label="Back to apps">←</a>
     <main class="product-main" data-install="termset">
-      <img class="product-icon" src="../assets/termset.svg" alt="" width="256" height="256">
-      <h1>termset</h1>
-      <div class="install">
-        <label for="platform">Platform</label>
-        <select id="platform">
-          <option value="">Select platform</option>
-          <option value="linux" data-file="terms-linux-amd64" data-url="https://github.com/liamzebedee/distribution/releases/latest/download/terms-linux-amd64">Linux AMD64</option>
-          <option value="mac" data-file="terms-macos-arm64" data-url="https://github.com/liamzebedee/distribution/releases/latest/download/terms-macos-arm64">macOS Apple Silicon</option>
-        </select>
-        <div class="command">
-          <code id="install-command" aria-live="polite"></code>
-          <button type="button" class="copy-command" aria-label="Copy download command" disabled>Copy</button>
-        </div>
+      <div class="product-hero">
+        <img class="product-icon" src="../assets/termset.svg" alt="" width="256" height="256">
+        <h1>termset</h1>
+        <a class="download-cta" href="#install">Download</a>
       </div>
+      <img class="product-shot single-shot termset-shot" src="https://liamzebedee.com/blog/things-i-did-in-2026/terms.feff7b31f24d.png" alt="termset terminal workspace with vertical tabs" width="952" height="592">
+      <section class="install" id="install" aria-labelledby="install-title">
+        <div class="install-heading">
+          <h2 id="install-title">Install</h2>
+          <div class="platform-field">
+            <label for="platform">Platform</label>
+            <select id="platform">
+              <option value="">Select platform</option>
+              <option value="linux" data-file="terms" data-url="https://github.com/liamzebedee/distribution/releases/latest/download/terms-linux-amd64">Linux</option>
+              <option value="mac" data-file="terms" data-url="https://github.com/liamzebedee/distribution/releases/latest/download/terms-macos-arm64">macOS</option>
+            </select>
+          </div>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3>Copy this command</h3>
+            <div class="command">
+              <code id="install-command" aria-live="polite"></code>
+              <button type="button" class="copy-icon" aria-label="Copy command" title="Copy command" disabled>
+                <svg class="icon-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"></path></svg>
+                <svg class="icon-check" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="m4 12 5 5L20 6"></path></svg>
+              </button>
+            </div>
+          </li>
+          <li><h3>Run in shell</h3></li>
+        </ol>
+      </section>
     </main>
   </div>
   <script src="../site.js" defer></script>
