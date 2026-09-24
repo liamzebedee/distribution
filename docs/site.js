@@ -1,64 +1,92 @@
 const install = document.querySelector("[data-install]");
 
 if (install) {
-  const select = install.querySelector("#platform");
+  const picker = install.querySelector(".platform-picker");
+  const summary = picker.querySelector("summary");
+  const selectedPlatform = picker.querySelector(".selected-platform");
+  const platforms = [...picker.querySelectorAll(".platform-menu button")];
   const code = install.querySelector("#install-command");
   const copy = install.querySelector(".copy-icon");
   const copyImage = copy.querySelector(".icon-copy");
   const checkImage = copy.querySelector(".icon-check");
-  const download = document.querySelector(".download-cta");
+  const copyStatus = install.querySelector(".copy-status");
+  const download = install.querySelector(".download-cta");
+  let feedbackTimer;
 
-  function updateCommand() {
-    const option = select.selectedOptions[0];
-    let command = "";
-    if (option.dataset.url) {
-      const downloadCommand = `curl -fL -o ${option.dataset.file} ${option.dataset.url}`;
-      command = install.dataset.install === "mytunes" && option.value === "mac"
-        ? `${downloadCommand} && tar -xzf MyTunes.tar.gz && open MyTunes.app`
-        : `${downloadCommand} && chmod +x ${option.dataset.file} && ./${option.dataset.file}`;
-    }
-    code.textContent = command || "Select a platform";
-    copy.disabled = !command;
+  function resetCopyFeedback() {
+    clearTimeout(feedbackTimer);
+    copy.classList.remove("pending", "copied", "failed");
+    copyStatus.classList.remove("failed");
+    copyStatus.textContent = "";
     copy.setAttribute("aria-label", "Copy command");
     copy.title = "Copy command";
     copyImage.hidden = false;
     checkImage.hidden = true;
-    download.textContent = option.value
-      ? `Download for ${option.value === "mac" ? "macOS" : "Linux"}`
-      : "Choose a platform";
+  }
+
+  function selectPlatform(platform) {
+    const option = platforms.find((item) => item.dataset.platform === platform) || platforms[0];
+    const downloadCommand = `curl -fL -o ${option.dataset.file} ${option.dataset.url}`;
+    const command = install.dataset.install === "mytunes" && option.dataset.platform === "mac"
+      ? `${downloadCommand} && tar -xzf MyTunes.tar.gz && open MyTunes.app`
+      : `${downloadCommand} && chmod +x ${option.dataset.file} && ./${option.dataset.file}`;
+
+    selectedPlatform.textContent = option.textContent;
+    platforms.forEach((item) => {
+      item.setAttribute("aria-current", String(item === option));
+    });
+    code.textContent = command;
+    copy.disabled = false;
+    download.textContent = `Download for ${option.textContent}`;
+    picker.open = false;
+    resetCopyFeedback();
   }
 
   function detectPlatform() {
     const platform = navigator.userAgentData?.platform || navigator.platform || navigator.userAgent;
-    const userAgent = navigator.userAgent;
-    if (/android|iphone|ipad/i.test(userAgent)) return "";
     if (/mac/i.test(platform)) return "mac";
-    if (/linux/i.test(platform)) return "linux";
-    return "";
+    return "linux";
   }
 
-  select.addEventListener("change", updateCommand);
+  platforms.forEach((button) => button.addEventListener("click", () => {
+    selectPlatform(button.dataset.platform);
+    summary.focus();
+  }));
+  picker.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      picker.open = false;
+      summary.focus();
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (!picker.contains(event.target)) picker.open = false;
+  });
+
   copy.addEventListener("click", async () => {
+    copy.classList.remove("copied", "failed");
+    copy.classList.add("pending");
+    copyStatus.classList.remove("failed");
+    copyStatus.textContent = "Copying…";
     try {
       await navigator.clipboard.writeText(code.textContent);
+      copy.classList.replace("pending", "copied");
       copy.setAttribute("aria-label", "Copied");
       copy.title = "Copied";
       copyImage.hidden = true;
       checkImage.hidden = false;
-      setTimeout(() => {
-        copy.setAttribute("aria-label", "Copy command");
-        copy.title = "Copy command";
-        copyImage.hidden = false;
-        checkImage.hidden = true;
-      }, 1800);
+      copyStatus.textContent = "Copied";
     } catch {
-      copy.setAttribute("aria-label", "Copy failed");
-      copy.title = "Copy failed";
+      copy.classList.replace("pending", "failed");
+      copy.setAttribute("aria-label", "Copy blocked");
+      copy.title = "Copy blocked";
+      copyStatus.classList.add("failed");
+      copyStatus.textContent = "Copy blocked";
     }
+    clearTimeout(feedbackTimer);
+    feedbackTimer = setTimeout(resetCopyFeedback, 2200);
   });
 
-  select.value = detectPlatform();
-  updateCommand();
+  selectPlatform(detectPlatform());
 }
 
 const gallery = document.querySelector(".product-gallery");

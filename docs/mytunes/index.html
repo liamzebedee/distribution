@@ -6,6 +6,9 @@
   <meta name="color-scheme" content="light">
   <title>MyTunes</title>
   <link rel="icon" href="../assets/mytunes.png">
+  <link rel="preload" as="image" href="../assets/mytunes-music.png">
+  <link rel="preload" as="image" href="../assets/mytunes-albums.png">
+  <link rel="preload" as="image" href="../assets/mytunes-playlist.png">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -18,9 +21,9 @@
         <a class="download-cta" href="#install">Download</a>
       </div>
       <div class="product-gallery" aria-label="MyTunes screenshots">
-        <img class="product-shot" src="../assets/mytunes-music.png" alt="MyTunes music library" width="1362" height="836">
-        <img class="product-shot" src="../assets/mytunes-albums.png" alt="MyTunes albums" width="1362" height="836" loading="lazy" hidden>
-        <img class="product-shot" src="../assets/mytunes-playlist.png" alt="MyTunes playlist" width="1362" height="836" loading="lazy" hidden>
+        <img class="product-shot" src="../assets/mytunes-music.png" alt="MyTunes music library" width="1362" height="836" loading="eager">
+        <img class="product-shot" src="../assets/mytunes-albums.png" alt="MyTunes albums" width="1362" height="836" loading="eager" hidden>
+        <img class="product-shot" src="../assets/mytunes-playlist.png" alt="MyTunes playlist" width="1362" height="836" loading="eager" hidden>
         <div class="gallery-controls">
           <button type="button" class="gallery-previous" aria-label="Previous screenshot">←</button>
           <div class="gallery-dots" aria-label="Choose screenshot">
@@ -32,16 +35,15 @@
         </div>
       </div>
       <section class="install" id="install" aria-labelledby="install-title">
-        <div class="install-heading">
-          <h2 id="install-title">Install</h2>
-          <div class="platform-field">
-            <label for="platform">Platform</label>
-            <select id="platform">
-              <option value="">Select platform</option>
-              <option value="linux" data-file="MyTunes.AppImage" data-url="https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-linux-amd64.AppImage">Linux</option>
-              <option value="mac" data-file="MyTunes.tar.gz" data-url="https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-macos-x86_64.tar.gz">macOS</option>
-            </select>
-          </div>
+        <div class="install-line" id="install-title">
+          <span>Download and install for</span>
+          <details class="platform-picker">
+            <summary><span class="selected-platform">Linux</span><span class="picker-chevron" aria-hidden="true">⌄</span></summary>
+            <div class="platform-menu">
+              <button type="button" data-platform="linux" data-file="MyTunes.AppImage" data-url="https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-linux-amd64.AppImage">Linux</button>
+              <button type="button" data-platform="mac" data-file="MyTunes.tar.gz" data-url="https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-macos-x86_64.tar.gz">macOS</button>
+            </div>
+          </details>
         </div>
         <ol class="steps">
           <li>
@@ -52,6 +54,7 @@
                 <svg class="icon-copy" viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h2"></path></svg>
                 <svg class="icon-check" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="m4 12 5 5L20 6"></path></svg>
               </button>
+              <span class="copy-status" role="status" aria-live="polite"></span>
             </div>
           </li>
           <li><h3>Run in shell</h3></li>
