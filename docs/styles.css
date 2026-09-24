@@ -49,7 +49,8 @@ button, select { font: inherit; }
 .product-hero { display: flex; flex-direction: column; align-items: center; padding-top: 24px; text-align: center; }
 .product-icon { width: 76px; height: 76px; object-fit: contain; }
 h1 { margin: 18px 0 24px; font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: -.045em; }
-.download-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 60px; padding: 0 34px; border-radius: 999px; color: #fff; background: #1a73e8; font-weight: 700; text-decoration: none; }
+.download-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 60px; padding: 0 34px; border-radius: 999px; color: #fff; background: #1a73e8; font-weight: 700; text-decoration: none; }
+.download-platform-icon { width: 20px; height: 20px; filter: brightness(0) invert(1); }
 .download-cta:hover { background: #185abc; }
 .product-gallery { width: min(100%, 950px); margin: 76px auto 0; }
 .gallery-stage { position: relative; }
@@ -75,9 +76,10 @@ h1 { margin: 18px 0 24px; font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;
 .platform-picker summary::marker { content: ""; }
 .platform-picker summary::-webkit-details-marker { display: none; }
 .platform-picker summary:hover { color: #185abc; }
+.selected-platform-icon, .platform-menu button img { width: 18px; height: 18px; }
 .picker-chevron { font-size: 1.125rem; line-height: 1; }
 .platform-menu { position: absolute; z-index: 2; top: calc(100% + 8px); left: 0; min-width: 140px; padding: 5px; border: 1px solid #ddd; border-radius: 8px; background: #fff; box-shadow: 0 8px 24px #0002; }
-.platform-menu button { display: block; width: 100%; padding: 8px 10px; border: 0; border-radius: 4px; color: #111; background: transparent; text-align: left; cursor: pointer; }
+.platform-menu button { display: flex; align-items: center; gap: 8px; width: 100%; padding: 8px 10px; border: 0; border-radius: 4px; color: #111; background: transparent; text-align: left; cursor: pointer; }
 .platform-menu button:hover, .platform-menu button[aria-current="true"] { background: #eef3fc; }
 .steps { margin: 32px 0 0; padding-left: 32px; }
 .steps li { padding-left: 8px; margin-bottom: 40px; }

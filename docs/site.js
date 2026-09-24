@@ -4,6 +4,7 @@ if (install) {
   const picker = install.querySelector(".platform-picker");
   const summary = picker.querySelector("summary");
   const selectedPlatform = picker.querySelector(".selected-platform");
+  const selectedPlatformIcon = picker.querySelector(".selected-platform-icon");
   const platforms = [...picker.querySelectorAll(".platform-menu button")];
   const code = install.querySelector("#install-command");
   const copy = install.querySelector(".copy-icon");
@@ -11,6 +12,8 @@ if (install) {
   const checkImage = copy.querySelector(".icon-check");
   const copyStatus = install.querySelector(".copy-status");
   const download = install.querySelector(".download-cta");
+  const downloadLabel = download.querySelector(".download-label");
+  const downloadIcon = download.querySelector(".download-platform-icon");
   let feedbackTimer;
 
   function resetCopyFeedback() {
@@ -31,13 +34,17 @@ if (install) {
       ? `${downloadCommand} && tar -xzf MyTunes.tar.gz && open MyTunes.app`
       : `${downloadCommand} && chmod +x ${option.dataset.file} && ./${option.dataset.file}`;
 
-    selectedPlatform.textContent = option.textContent;
+    const platformName = option.textContent.trim();
+    const platformIcon = option.querySelector("img").src;
+    selectedPlatform.textContent = platformName;
+    selectedPlatformIcon.src = platformIcon;
     platforms.forEach((item) => {
       item.setAttribute("aria-current", String(item === option));
     });
     code.textContent = command;
     copy.disabled = false;
-    download.textContent = `Download for ${option.textContent}`;
+    downloadLabel.textContent = `Download for ${platformName}`;
+    downloadIcon.src = platformIcon;
     picker.open = false;
     resetCopyFeedback();
   }
