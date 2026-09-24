@@ -56,12 +56,13 @@ h1 { margin: 18px 0 24px; font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;
 .hero-download { display: flex; justify-content: center; }
 .download-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 60px; padding: 0 34px; border-radius: 999px; color: #fff; background: #1a73e8; font-weight: 700; text-decoration: none; }
 .download-cta:hover { background: #185abc; }
-.product-gallery { width: min(100%, 950px); margin: 76px auto 0; }
+.product-gallery { width: min(100%, 681px); margin: 76px auto 0; }
+.product-gallery[data-platform="mac"] { width: min(100%, 606px); }
 .gallery-stage { position: relative; }
 .product-shot { display: block; width: 100%; height: auto; border: 1px solid #ddd; border-radius: 16px; background: #fff; }
 .product-gallery[data-platform="mac"] .product-shot { border: 0; border-radius: 0; background: transparent; }
-.single-shot { width: min(100%, 950px); margin: 76px auto 0; }
-.product-shot.termset-shot { width: min(100%, 952px); border-radius: 0; }
+.single-shot { width: min(100%, 476px); margin: 76px auto 0; }
+.product-shot.termset-shot { border-radius: 0; }
 .gallery-stage > button { position: absolute; top: 50%; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; transform: translateY(-50%); border: 1px solid #ddd; border-radius: 50%; color: #333; background: #fff; cursor: pointer; }
 .gallery-stage > button:hover { border-color: #999; color: #111; }
 .gallery-stage > button svg { display: block; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
