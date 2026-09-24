@@ -4,88 +4,29 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>Download MyTunes and termset</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Apps</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
-  <main>
-    <header class="masthead">
-      <h1>Download MyTunes and termset</h1>
-    </header>
-
-    <section class="gallery" aria-label="Product screenshots">
-      <h2>Screenshots</h2>
-      <figure class="gallery-slide">
-        <img src="https://liamzebedee.com/blog/things-i-did-in-2026/terms.feff7b31f24d.png" alt="termset terminal workspace with vertical tabs" width="952" height="592">
-        <figcaption>termset · Terminal workspace</figcaption>
-      </figure>
-      <figure class="gallery-slide" hidden>
-        <img src="https://liamzebedee.com/blog/things-i-did-in-2026/itunes1.9aa5862f8802.png" alt="MyTunes album artwork view" width="1128" height="786" loading="lazy">
-        <figcaption>MyTunes · Albums</figcaption>
-      </figure>
-      <figure class="gallery-slide" hidden>
-        <img src="https://liamzebedee.com/blog/things-i-did-in-2026/itunes2.94ffcca7558b.png" alt="MyTunes music library view" width="1128" height="786" loading="lazy">
-        <figcaption>MyTunes · Music library</figcaption>
-      </figure>
-      <div class="gallery-controls">
-        <button type="button" class="gallery-previous" aria-label="Previous screenshot">Previous</button>
-        <span class="gallery-count" aria-live="polite">1 / 3</span>
-        <button type="button" class="gallery-next" aria-label="Next screenshot">Next</button>
-      </div>
-      <div class="gallery-thumbnails" aria-label="Choose a screenshot">
-        <button type="button" data-slide="0" aria-label="Show termset screenshot" aria-pressed="true"><img src="https://liamzebedee.com/blog/things-i-did-in-2026/terms.feff7b31f24d.png" alt="" width="952" height="592"></button>
-        <button type="button" data-slide="1" aria-label="Show MyTunes albums screenshot" aria-pressed="false"><img src="https://liamzebedee.com/blog/things-i-did-in-2026/itunes1.9aa5862f8802.png" alt="" width="1128" height="786"></button>
-        <button type="button" data-slide="2" aria-label="Show MyTunes music library screenshot" aria-pressed="false"><img src="https://liamzebedee.com/blog/things-i-did-in-2026/itunes2.94ffcca7558b.png" alt="" width="1128" height="786"></button>
-      </div>
-      <p class="image-source">Screenshots from <a href="https://liamzebedee.com/blog/things-i-did-in-2026/">Things I did in 2026</a>.</p>
-    </section>
-
-    <section class="product" id="mytunes" aria-labelledby="mytunes-title">
-      <h2 id="mytunes-title">MyTunes</h2>
-      <p>Music library and iPod sync for Linux and macOS.</p>
-      <div class="suggested-download">
-        <a class="primary-download" hidden></a>
-        <p class="platform-message" hidden></p>
-        <a href="#mytunes-platforms">See all platforms</a>
-      </div>
-      <div class="platforms" id="mytunes-platforms">
-        <h3>All platforms</h3>
-        <div class="platform-row">
-          <span>Linux AMD64</span>
-          <a data-platform="linux" href="https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-linux-amd64.AppImage">Download AppImage</a>
-          <button type="button" class="copy-link" aria-label="Copy MyTunes Linux download link">Copy link</button>
-        </div>
-        <div class="platform-row">
-          <span>macOS (Intel or Apple Silicon with Rosetta)</span>
-          <a data-platform="mac" href="https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-macos-x86_64.tar.gz">Download app archive</a>
-          <button type="button" class="copy-link" aria-label="Copy MyTunes macOS download link">Copy link</button>
-        </div>
-      </div>
-    </section>
-
-    <section class="product" id="termset" aria-labelledby="termset-title">
-      <h2 id="termset-title">termset</h2>
-      <p>A terminal workspace with vertical tabs and file based sync.</p>
-      <div class="suggested-download">
-        <a class="primary-download" hidden></a>
-        <p class="platform-message" hidden></p>
-        <a href="#termset-platforms">See all platforms</a>
-      </div>
-      <div class="platforms" id="termset-platforms">
-        <h3>All platforms</h3>
-        <div class="platform-row">
-          <span>Linux AMD64</span>
-          <a data-platform="linux" href="https://github.com/liamzebedee/distribution/releases/latest/download/terms-linux-amd64">Download binary</a>
-          <button type="button" class="copy-link" aria-label="Copy termset Linux download link">Copy link</button>
-        </div>
-        <div class="platform-row">
-          <span>macOS Apple Silicon</span>
-          <a data-platform="mac" href="https://github.com/liamzebedee/distribution/releases/latest/download/terms-macos-arm64">Download binary</a>
-          <button type="button" class="copy-link" aria-label="Copy termset macOS download link">Copy link</button>
-        </div>
-      </div>
-    </section>
+<body class="page-home">
+  <main class="home">
+    <div class="app-grid">
+      <a class="app-card" href="./mytunes/">
+        <img class="app-icon" src="./assets/mytunes.png" alt="" width="512" height="512">
+        <span class="app-title">MyTunes</span>
+        <span class="platform-list">
+          <span class="platform"><img src="./assets/linux.svg" alt="" width="20" height="20">Linux</span>
+          <span class="platform"><img src="./assets/apple.svg" alt="" width="20" height="20">macOS</span>
+        </span>
+      </a>
+      <a class="app-card" href="./termset/">
+        <img class="app-icon" src="./assets/termset.svg" alt="" width="256" height="256">
+        <span class="app-title">termset</span>
+        <span class="platform-list">
+          <span class="platform"><img src="./assets/linux.svg" alt="" width="20" height="20">Linux</span>
+          <span class="platform"><img src="./assets/apple.svg" alt="" width="20" height="20">macOS</span>
+        </span>
+      </a>
+    </div>
   </main>
-  <script src="site.js" defer></script>
 </body>
 </html>
