@@ -75,13 +75,14 @@ h1 { margin: 18px 0 24px; font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;
 .product-overview p:last-child { margin-bottom: 0; }
 .product-overview code { font: .9em ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
 .install { width: min(100%, 800px); margin: 96px auto 0; padding-top: 24px; border-top: 1px solid #e5e5e5; scroll-margin-top: 24px; }
-.install-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px; font-size: 1rem; line-height: 1.5; }
-.platform-picker { position: relative; display: inline-block; }
-.platform-picker summary { display: inline-flex; align-items: center; gap: 4px; border-bottom: 1px solid currentColor; color: #1a73e8; font-weight: 600; list-style: none; cursor: pointer; }
+.install-line { font-size: 1rem; line-height: 1.5; }
+.platform-picker { position: relative; display: inline-block; vertical-align: baseline; }
+.platform-picker summary { display: inline-flex; align-items: baseline; gap: 4px; border-bottom: 1px solid currentColor; color: #1a73e8; font-weight: 600; line-height: inherit; list-style: none; cursor: pointer; }
 .platform-picker summary::marker { content: ""; }
 .platform-picker summary::-webkit-details-marker { display: none; }
 .platform-picker summary:hover { color: #185abc; }
 .selected-platform-icon, .platform-menu button img { width: 18px; height: 18px; }
+.selected-platform-icon { align-self: center; }
 .picker-chevron { font-size: 1.125rem; line-height: 1; }
 .platform-menu { position: absolute; z-index: 2; top: calc(100% + 8px); left: 0; min-width: 140px; padding: 5px; border: 1px solid #ddd; border-radius: 8px; background: #fff; box-shadow: 0 8px 24px #0002; }
 .platform-menu button { display: flex; align-items: center; gap: 8px; width: 100%; padding: 8px 10px; border: 0; border-radius: 4px; color: #111; background: transparent; text-align: left; cursor: pointer; }
