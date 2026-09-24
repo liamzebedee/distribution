@@ -1,14 +1,18 @@
+/* Small reset: preserve native controls while making sizing and media predictable. */
+*, *::before, *::after { box-sizing: border-box; }
 html {
   font: 400 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   color: #111;
   background: #fdfdfd;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
-
-* { box-sizing: border-box; }
+body { min-width: 320px; margin: 0; }
+img, svg { display: block; max-width: 100%; }
+img { height: auto; }
+button, input, select, textarea { font: inherit; }
+a { color: inherit; text-decoration-skip-ink: auto; }
 [hidden] { display: none !important; }
-body { margin: 0; }
-a { color: inherit; }
-button, select { font: inherit; }
 :focus-visible { outline: 2px solid #2a7ae2; outline-offset: 3px; }
 
 .home {
@@ -49,14 +53,15 @@ button, select { font: inherit; }
 .product-hero { display: flex; flex-direction: column; align-items: center; padding-top: 24px; text-align: center; }
 .product-icon { width: 76px; height: 76px; object-fit: contain; }
 h1 { margin: 18px 0 24px; font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1; letter-spacing: -.045em; }
-.hero-download { display: inline-flex; align-items: center; gap: 18px; }
+.hero-download { display: flex; flex-direction: column; align-items: center; gap: 12px; }
 .download-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 60px; padding: 0 34px; border-radius: 999px; color: #fff; background: #1a73e8; font-weight: 700; text-decoration: none; }
-.hero-platforms { display: inline-flex; align-items: center; gap: 10px; }
-.hero-platforms img { display: block; width: 24px; height: 24px; }
+.hero-platforms { display: inline-flex; align-items: center; justify-content: center; gap: 10px; }
+.hero-platforms img { display: block; flex: none; width: 24px; height: 24px; }
 .download-cta:hover { background: #185abc; }
 .product-gallery { width: min(100%, 950px); margin: 76px auto 0; }
 .gallery-stage { position: relative; }
 .product-shot { display: block; width: 100%; height: auto; border: 1px solid #ddd; border-radius: 16px; background: #fff; }
+.product-gallery[data-platform="mac"] .product-shot { border: 0; border-radius: 0; background: transparent; }
 .single-shot { width: min(100%, 950px); margin: 76px auto 0; }
 .product-shot.termset-shot { width: min(100%, 952px); border-radius: 0; }
 .gallery-stage > button { position: absolute; top: 50%; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; transform: translateY(-50%); border: 1px solid #ddd; border-radius: 50%; color: #333; background: #fff; cursor: pointer; }
@@ -67,7 +72,7 @@ h1 { margin: 18px 0 24px; font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;
 .gallery-dots { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
 .gallery-dots button { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: #bbb; cursor: pointer; }
 .gallery-dots button[aria-current="true"] { background: #1a73e8; }
-.product-overview { width: min(100%, 800px); margin: 72px auto 0; }
+.product-overview { width: min(100%, 800px); margin: 72px auto 0; line-height: 1.65; }
 .product-overview p { margin: 0 0 1.25em; }
 .product-overview p:last-child { margin-bottom: 0; }
 .product-overview code { font: .9em ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
@@ -88,7 +93,7 @@ h1 { margin: 18px 0 24px; font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;
 .steps li::marker { font-weight: 700; font-size: 1.25rem; }
 .steps h3 { margin: 0 0 14px; font-size: 1.125rem; }
 .command { position: relative; }
-.command code { display: block; min-height: 84px; padding: 20px 66px 20px 20px; overflow-wrap: anywhere; border: 1px solid #ddd; border-radius: 8px; background: #f6f6f6; font: 14px/1.5 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
+.command code { display: block; min-height: 84px; padding: 20px 66px 20px 20px; overflow-wrap: anywhere; border: 1px solid #ddd; border-radius: 8px; background: #f6f6f6; font: 15px/1.6 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
 .copy-icon { position: absolute; top: 10px; right: 10px; display: grid; place-items: center; width: 36px; height: 36px; padding: 7px; border: 0; border-radius: 5px; color: #555; background: transparent; cursor: pointer; }
 .copy-icon:hover:not(:disabled) { color: #111; background: #e8e8e8; }
 .copy-icon:disabled { opacity: .5; cursor: default; }
@@ -100,6 +105,10 @@ h1 { margin: 18px 0 24px; font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;
 .copy-status { display: block; margin-top: 8px; font-size: .875rem; color: #16803d; }
 .copy-status:empty { display: none; }
 .copy-status.failed { color: #b3261e; }
+
+@media (prefers-reduced-motion: reduce) {
+  .app-card { transition: none; }
+}
 
 @media (max-width: 1100px) {
   .gallery-previous { left: 12px; }

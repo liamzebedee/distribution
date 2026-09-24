@@ -9,7 +9,10 @@
   <link rel="preload" as="image" href="../assets/mytunes-music.png">
   <link rel="preload" as="image" href="../assets/mytunes-albums.png">
   <link rel="preload" as="image" href="../assets/mytunes-playlist.png">
-  <link rel="stylesheet" href="../styles.css?v=20b8cc3b">
+  <link rel="preload" as="image" href="../assets/mytunes-macos-music.png">
+  <link rel="preload" as="image" href="../assets/mytunes-macos-albums.png">
+  <link rel="preload" as="image" href="../assets/mytunes-macos-playlist.png">
+  <link rel="stylesheet" href="../styles.css?v=56659c7c">
 </head>
 <body>
   <div class="product-shell">
@@ -28,9 +31,9 @@
       </div>
       <div class="product-gallery" aria-label="MyTunes screenshots">
         <div class="gallery-stage">
-          <img class="product-shot" src="../assets/mytunes-music.png" alt="MyTunes music library" width="1362" height="836" loading="eager">
-          <img class="product-shot" src="../assets/mytunes-albums.png" alt="MyTunes albums" width="1362" height="836" loading="eager" hidden>
-          <img class="product-shot" src="../assets/mytunes-playlist.png" alt="MyTunes playlist" width="1362" height="836" loading="eager" hidden>
+          <img class="product-shot" src="../assets/mytunes-music.png" data-linux-src="../assets/mytunes-music.png" data-mac-src="../assets/mytunes-macos-music.png" alt="MyTunes music library" width="1362" height="836" loading="eager">
+          <img class="product-shot" src="../assets/mytunes-albums.png" data-linux-src="../assets/mytunes-albums.png" data-mac-src="../assets/mytunes-macos-albums.png" alt="MyTunes albums" width="1362" height="836" loading="eager" hidden>
+          <img class="product-shot" src="../assets/mytunes-playlist.png" data-linux-src="../assets/mytunes-playlist.png" data-mac-src="../assets/mytunes-macos-playlist.png" alt="MyTunes playlist" width="1362" height="836" loading="eager" hidden>
           <button type="button" class="gallery-previous" aria-label="Previous screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"></path></svg></button>
           <button type="button" class="gallery-next" aria-label="Next screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"></path></svg></button>
         </div>
@@ -79,6 +82,6 @@
       </section>
     </main>
   </div>
-  <script src="../site.js?v=23cf9347" defer></script>
+  <script src="../site.js?v=9e9cbbb0" defer></script>
 </body>
 </html>

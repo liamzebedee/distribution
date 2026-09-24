@@ -40,11 +40,25 @@ if (install) {
     });
     code.textContent = command;
     copy.disabled = false;
+    if (install.dataset.install === "mytunes") {
+      const gallery = install.querySelector(".product-gallery");
+      const isMac = option.dataset.platform === "mac";
+      gallery.dataset.platform = option.dataset.platform;
+      gallery.querySelectorAll(".product-shot").forEach((image) => {
+        const source = isMac ? image.dataset.macSrc : image.dataset.linuxSrc;
+        if (image.getAttribute("src") !== source) image.src = source;
+        image.width = isMac ? 1212 : 1362;
+        image.height = isMac ? 815 : 836;
+      });
+    }
     picker.open = false;
     resetCopyFeedback();
   }
 
   function detectPlatform() {
+    const requested = new URLSearchParams(window.location.search).get("platform")?.toLowerCase();
+    if (requested === "macos") return "mac";
+    if (requested === "linux") return "linux";
     const platform = navigator.userAgentData?.platform || navigator.platform || navigator.userAgent;
     if (/mac/i.test(platform)) return "mac";
     return "linux";
