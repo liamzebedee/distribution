@@ -62,3 +62,28 @@ document.querySelectorAll(".copy-link").forEach((button) => {
     }
   });
 });
+
+const gallery = document.querySelector(".gallery");
+const slides = [...gallery.querySelectorAll(".gallery-slide")];
+const thumbnails = [...gallery.querySelectorAll(".gallery-thumbnails button")];
+const count = gallery.querySelector(".gallery-count");
+let currentSlide = 0;
+
+function showSlide(index) {
+  currentSlide = (index + slides.length) % slides.length;
+  slides.forEach((slide, slideIndex) => { slide.hidden = slideIndex !== currentSlide; });
+  thumbnails.forEach((button, slideIndex) => {
+    button.setAttribute("aria-pressed", String(slideIndex === currentSlide));
+  });
+  count.textContent = `${currentSlide + 1} / ${slides.length}`;
+}
+
+gallery.querySelector(".gallery-previous").addEventListener("click", () => showSlide(currentSlide - 1));
+gallery.querySelector(".gallery-next").addEventListener("click", () => showSlide(currentSlide + 1));
+thumbnails.forEach((button, index) => button.addEventListener("click", () => showSlide(index)));
+gallery.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    showSlide(currentSlide + (event.key === "ArrowRight" ? 1 : -1));
+    event.preventDefault();
+  }
+});

@@ -14,6 +14,18 @@ h1, h2, h3 { font-size: 1rem; line-height: 1.5; font-weight: 800; }
 h1, h2, h3 { margin: 0; }
 p { margin: 8px 0 16px; }
 .product { border-top: 1px solid #e8e8e8; padding: 32px 0 48px; }
+.gallery { border-top: 1px solid #e8e8e8; padding: 32px 0 24px; }
+.gallery-slide { margin: 12px 0 0; }
+.gallery-slide img { display: block; max-width: 100%; max-height: 720px; width: auto; height: auto; border: 1px solid #ddd; background: white; }
+.gallery-slide figcaption { margin-top: 8px; }
+.gallery-controls { display: flex; align-items: center; gap: 16px; margin: 16px 0 12px; }
+.gallery-controls button, .gallery-thumbnails button { border: 1px solid #ccc; border-radius: 3px; background: white; color: #111; font: inherit; cursor: pointer; }
+.gallery-controls button { padding: 4px 10px; }
+.gallery-controls button:hover, .gallery-thumbnails button:hover { border-color: #111; }
+.gallery-thumbnails { display: flex; flex-wrap: wrap; gap: 8px; }
+.gallery-thumbnails button { width: 126px; height: 90px; padding: 3px; }
+.gallery-thumbnails button[aria-pressed="true"] { border-color: #2a7ae2; }
+.gallery-thumbnails img { display: block; width: 100%; height: 100%; object-fit: contain; }
 a { color: #2a7ae2; text-decoration: none; }
 a:visited { color: #1756a9; }
 a:hover { color: #111; text-decoration: underline; }
@@ -21,8 +33,6 @@ a:hover { color: #111; text-decoration: underline; }
 .suggested-download p { margin: 0; }
 .primary-download { display: inline-block; padding: 8px 14px; border: 1px solid #2a7ae2; border-radius: 3px; font-weight: 700; }
 .primary-download:hover { border-color: #111; }
-.screenshots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 12px; align-items: start; }
-.screenshots img { display: block; width: 100%; height: auto; border: 1px solid #ddd; background: white; }
 .image-source { margin: 8px 0 24px; color: #555; font-size: 0.875rem; }
 .platforms { border-top: 1px solid #e8e8e8; padding-top: 12px; }
 .platform-row { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(150px, 1fr) auto; gap: 8px 20px; align-items: center; border-bottom: 1px solid #e8e8e8; padding: 10px 0; }
