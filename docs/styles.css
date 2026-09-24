@@ -52,15 +52,16 @@ h1 { margin: 18px 0 24px; font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;
 .download-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 60px; padding: 0 34px; border-radius: 999px; color: #fff; background: #1a73e8; font-weight: 700; text-decoration: none; }
 .download-cta:hover { background: #185abc; }
 .product-gallery { width: min(100%, 950px); margin: 76px auto 0; }
+.gallery-stage { position: relative; }
 .product-shot { display: block; width: 100%; height: auto; border: 1px solid #ddd; border-radius: 16px; background: #fff; }
 .single-shot { width: min(100%, 950px); margin: 76px auto 0; }
 .termset-shot { width: min(100%, 952px); }
-.gallery-controls { display: flex; align-items: center; justify-content: center; gap: 22px; margin-top: 18px; }
-.gallery-controls button { border: 0; background: transparent; color: #555; cursor: pointer; }
-.gallery-controls button:hover { color: #111; }
-.gallery-previous, .gallery-next { width: 36px; height: 36px; font-size: 1.4rem; line-height: 1; }
-.gallery-dots { display: flex; gap: 10px; }
-.gallery-dots button { width: 9px; height: 9px; padding: 0; border-radius: 50%; background: #bbb; }
+.gallery-stage > button { position: absolute; top: 50%; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; transform: translateY(-50%); border: 1px solid #ddd; border-radius: 50%; color: #333; background: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.gallery-stage > button:hover { border-color: #999; color: #111; }
+.gallery-previous { left: -60px; }
+.gallery-next { right: -60px; }
+.gallery-dots { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
+.gallery-dots button { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: #bbb; cursor: pointer; }
 .gallery-dots button[aria-current="true"] { background: #1a73e8; }
 .install { width: min(100%, 800px); margin: 96px auto 0; padding-top: 24px; border-top: 1px solid #e5e5e5; scroll-margin-top: 24px; }
 .install-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px; font-size: 1rem; line-height: 1.5; }
@@ -90,6 +91,11 @@ h1 { margin: 18px 0 24px; font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;
 .copy-status { display: block; margin-top: 8px; font-size: .875rem; color: #16803d; }
 .copy-status:empty { display: none; }
 .copy-status.failed { color: #b3261e; }
+
+@media (max-width: 1100px) {
+  .gallery-previous { left: 12px; }
+  .gallery-next { right: 12px; }
+}
 
 @media (max-width: 620px) {
   .app-grid { grid-template-columns: minmax(0, 350px); gap: 16px; }
