@@ -11,9 +11,6 @@ if (install) {
   const copyImage = copy.querySelector(".icon-copy");
   const checkImage = copy.querySelector(".icon-check");
   const copyStatus = install.querySelector(".copy-status");
-  const download = install.querySelector(".download-cta");
-  const downloadLabel = download.querySelector(".download-label");
-  const downloadIcon = download.querySelector(".download-platform-icon");
   let feedbackTimer;
 
   function resetCopyFeedback() {
@@ -43,8 +40,6 @@ if (install) {
     });
     code.textContent = command;
     copy.disabled = false;
-    downloadLabel.textContent = `Download for ${platformName}`;
-    downloadIcon.src = platformIcon;
     picker.open = false;
     resetCopyFeedback();
   }
