@@ -47,6 +47,8 @@ if (install) {
       gallery.querySelectorAll(".product-shot").forEach((image) => {
         const source = isMac ? image.dataset.macSrc : image.dataset.linuxSrc;
         if (image.getAttribute("src") !== source) image.src = source;
+        const fullSizeLink = image.closest("a");
+        if (fullSizeLink) fullSizeLink.href = image.src;
         image.width = isMac ? 1212 : 1362;
         image.height = isMac ? 815 : 836;
       });
@@ -113,7 +115,11 @@ if (gallery) {
 
   function showImage(index) {
     current = (index + images.length) % images.length;
-    images.forEach((image, imageIndex) => { image.hidden = imageIndex !== current; });
+    images.forEach((image, imageIndex) => {
+      image.hidden = imageIndex !== current;
+      const fullSizeLink = image.closest("a");
+      if (fullSizeLink) fullSizeLink.hidden = image.hidden;
+    });
     dots.forEach((dot, dotIndex) => {
       if (dotIndex === current) dot.setAttribute("aria-current", "true");
       else dot.removeAttribute("aria-current");
