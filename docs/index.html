@@ -4,53 +4,66 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light">
-  <title>MyTunes And termset</title>
+  <title>Download MyTunes and termset</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main>
     <header class="masthead">
-      <h1>MyTunes And termset</h1>
+      <h1>Download MyTunes and termset</h1>
     </header>
 
     <section class="product" id="mytunes" aria-labelledby="mytunes-title">
-      <div class="product-copy">
-        <h2 id="mytunes-title">MyTunes</h2>
-        <div class="downloads">
-          <a href="https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-linux-amd64.AppImage">Download For Linux AMD64</a>
-          <a href="https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-macos-x86_64.tar.gz">Download For Mac ARM64 (Rosetta)</a>
-        </div>
+      <h2 id="mytunes-title">MyTunes</h2>
+      <p>Music library and iPod sync for Linux and macOS.</p>
+      <div class="suggested-download">
+        <a class="primary-download" hidden></a>
+        <p class="platform-message" hidden></p>
+        <a href="#mytunes-platforms">See all platforms</a>
       </div>
-      <img class="screenshot" src="assets/mytunes.png" alt="MyTunes Music Library And Cover Flow" width="1280" height="800">
-      <div class="install-grid">
-        <div class="install">
+      <div class="screenshots">
+        <img src="assets/mytunes-library.png" alt="MyTunes album artwork view" width="1128" height="786">
+        <img src="assets/mytunes-player.png" alt="MyTunes music library view" width="1128" height="786" loading="lazy">
+      </div>
+      <p class="image-source">Screenshots from <a href="https://liamzebedee.com/blog/things-i-did-in-2026/">Things I did in 2026</a>.</p>
+      <div class="platforms" id="mytunes-platforms">
+        <h3>All platforms</h3>
+        <div class="platform-row">
           <span>Linux AMD64</span>
-          <div class="command"><code>curl -fL -o MyTunes.AppImage https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-linux-amd64.AppImage &amp;&amp; chmod +x MyTunes.AppImage &amp;&amp; ./MyTunes.AppImage</code><button type="button" aria-label="Copy MyTunes Linux Command">Copy</button></div>
+          <a data-platform="linux" href="https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-linux-amd64.AppImage">Download AppImage</a>
+          <button type="button" class="copy-link" aria-label="Copy MyTunes Linux download link">Copy link</button>
         </div>
-        <div class="install">
-          <span>Mac ARM64 (Rosetta)</span>
-          <div class="command"><code>curl -fL -o MyTunes.tar.gz https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-macos-x86_64.tar.gz &amp;&amp; tar -xzf MyTunes.tar.gz &amp;&amp; open MyTunes.app</code><button type="button" aria-label="Copy MyTunes Mac Command">Copy</button></div>
+        <div class="platform-row">
+          <span>macOS (Intel or Apple Silicon with Rosetta)</span>
+          <a data-platform="mac" href="https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-macos-x86_64.tar.gz">Download app archive</a>
+          <button type="button" class="copy-link" aria-label="Copy MyTunes macOS download link">Copy link</button>
         </div>
       </div>
     </section>
 
     <section class="product" id="termset" aria-labelledby="termset-title">
-      <div class="product-copy">
-        <h2 id="termset-title">termset</h2>
-        <div class="downloads">
-          <a href="https://github.com/liamzebedee/distribution/releases/latest/download/terms-linux-amd64">Download For Linux AMD64</a>
-          <a href="https://github.com/liamzebedee/distribution/releases/latest/download/terms-macos-arm64">Download For Mac ARM64</a>
-        </div>
+      <h2 id="termset-title">termset</h2>
+      <p>A terminal workspace with vertical tabs and file based sync.</p>
+      <div class="suggested-download">
+        <a class="primary-download" hidden></a>
+        <p class="platform-message" hidden></p>
+        <a href="#termset-platforms">See all platforms</a>
       </div>
-      <img class="screenshot" src="assets/termset.png" alt="termset Terminal Workspace" width="1280" height="800">
-      <div class="install-grid">
-        <div class="install">
+      <div class="screenshots">
+        <img src="assets/termset.png" alt="termset terminal workspace with vertical tabs" width="952" height="592" loading="lazy">
+      </div>
+      <p class="image-source">Screenshot from <a href="https://liamzebedee.com/blog/things-i-did-in-2026/">Things I did in 2026</a>.</p>
+      <div class="platforms" id="termset-platforms">
+        <h3>All platforms</h3>
+        <div class="platform-row">
           <span>Linux AMD64</span>
-          <div class="command"><code>curl -fL -o terms https://github.com/liamzebedee/distribution/releases/latest/download/terms-linux-amd64 &amp;&amp; chmod +x terms &amp;&amp; ./terms</code><button type="button" aria-label="Copy termset Linux Command">Copy</button></div>
+          <a data-platform="linux" href="https://github.com/liamzebedee/distribution/releases/latest/download/terms-linux-amd64">Download binary</a>
+          <button type="button" class="copy-link" aria-label="Copy termset Linux download link">Copy link</button>
         </div>
-        <div class="install">
-          <span>Mac ARM64</span>
-          <div class="command"><code>curl -fL -o terms https://github.com/liamzebedee/distribution/releases/latest/download/terms-macos-arm64 &amp;&amp; chmod +x terms &amp;&amp; ./terms</code><button type="button" aria-label="Copy termset Mac Command">Copy</button></div>
+        <div class="platform-row">
+          <span>macOS Apple Silicon</span>
+          <a data-platform="mac" href="https://github.com/liamzebedee/distribution/releases/latest/download/terms-macos-arm64">Download binary</a>
+          <button type="button" class="copy-link" aria-label="Copy termset macOS download link">Copy link</button>
         </div>
       </div>
     </section>

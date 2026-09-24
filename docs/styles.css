@@ -6,29 +6,33 @@ html {
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body { margin: 0; }
 main { width: min(100% - 48px, 1200px); margin: 0 auto; }
 .masthead { padding: 48px 0 24px; }
-h1, h2 { font-size: 1rem; line-height: 1.5; font-weight: 800; }
-h1 { margin: 0; }
-h2 { margin: 0 0 8px; }
+h1, h2, h3 { font-size: 1rem; line-height: 1.5; font-weight: 800; }
+h1, h2, h3 { margin: 0; }
+p { margin: 8px 0 16px; }
 .product { border-top: 1px solid #e8e8e8; padding: 32px 0 48px; }
-.product-copy { margin-bottom: 20px; }
-.downloads { display: flex; flex-wrap: wrap; gap: 8px 24px; }
 a { color: #2a7ae2; text-decoration: none; }
 a:visited { color: #1756a9; }
 a:hover { color: #111; text-decoration: underline; }
-.screenshot { display: block; width: 100%; height: auto; max-height: 700px; object-fit: contain; object-position: left center; border: 1px solid #ddd; border-radius: 4px; background: white; }
-.install-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 20px; }
-.install > span { display: block; margin-bottom: 8px; font-weight: 700; }
-.command { display: flex; align-items: start; gap: 12px; min-width: 0; }
-.command code { display: block; flex: 1; min-width: 0; overflow-wrap: anywhere; padding: 8px 10px; border: 1px solid #e8e8e8; border-radius: 3px; background: #eef; font: 15px/1.5 monospace; }
-.command button { border: 1px solid #ccc; border-radius: 3px; background: white; color: #111; padding: 8px 10px; font: inherit; cursor: pointer; }
-.command button:hover { background: #f4f4f4; }
+.suggested-download { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin: 20px 0 24px; }
+.suggested-download p { margin: 0; }
+.primary-download { display: inline-block; padding: 8px 14px; border: 1px solid #2a7ae2; border-radius: 3px; font-weight: 700; }
+.primary-download:hover { border-color: #111; }
+.screenshots { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 480px), 1fr)); gap: 12px; align-items: start; }
+.screenshots img { display: block; width: 100%; height: auto; border: 1px solid #ddd; background: white; }
+.image-source { margin: 8px 0 24px; color: #555; font-size: 0.875rem; }
+.platforms { border-top: 1px solid #e8e8e8; padding-top: 12px; }
+.platform-row { display: grid; grid-template-columns: minmax(240px, 1fr) minmax(150px, 1fr) auto; gap: 8px 20px; align-items: center; border-bottom: 1px solid #e8e8e8; padding: 10px 0; }
+.platform-row button { border: 1px solid #ccc; border-radius: 3px; background: white; color: #111; padding: 4px 8px; font: inherit; cursor: pointer; }
+.platform-row button:hover { background: #f4f4f4; }
 :focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
 
 @media (max-width: 700px) {
   main { width: calc(100% - 24px); }
   .masthead { padding-top: 36px; }
-  .install-grid { grid-template-columns: 1fr; }
+  .platform-row { grid-template-columns: 1fr auto; }
+  .platform-row span { grid-column: 1 / -1; }
 }
