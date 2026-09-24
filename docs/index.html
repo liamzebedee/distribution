@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>MyTunes And termset</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header class="masthead">
+      <h1>MyTunes And termset</h1>
+    </header>
+
+    <section class="product" id="mytunes" aria-labelledby="mytunes-title">
+      <div class="product-copy">
+        <h2 id="mytunes-title">MyTunes</h2>
+        <div class="downloads">
+          <a href="https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-linux-amd64.AppImage">Download For Linux AMD64</a>
+          <a href="https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-macos-arm64.tar.gz">Download For Mac ARM64</a>
+        </div>
+      </div>
+      <img class="screenshot" src="assets/mytunes.png" alt="MyTunes Music Library And Cover Flow" width="1280" height="800">
+      <div class="install-grid">
+        <div class="install">
+          <span>Linux AMD64</span>
+          <div class="command"><code>curl -fL -o MyTunes.AppImage https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-linux-amd64.AppImage &amp;&amp; chmod +x MyTunes.AppImage &amp;&amp; ./MyTunes.AppImage</code><button type="button" aria-label="Copy MyTunes Linux Command">Copy</button></div>
+        </div>
+        <div class="install">
+          <span>Mac ARM64</span>
+          <div class="command"><code>curl -fL -o MyTunes.tar.gz https://github.com/liamzebedee/distribution/releases/latest/download/MyTunes-macos-arm64.tar.gz &amp;&amp; tar -xzf MyTunes.tar.gz &amp;&amp; open MyTunes.app</code><button type="button" aria-label="Copy MyTunes Mac Command">Copy</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="product" id="termset" aria-labelledby="termset-title">
+      <div class="product-copy">
+        <h2 id="termset-title">termset</h2>
+        <div class="downloads">
+          <a href="https://github.com/liamzebedee/distribution/releases/latest/download/terms-linux-amd64">Download For Linux AMD64</a>
+          <a href="https://github.com/liamzebedee/distribution/releases/latest/download/terms-macos-arm64">Download For Mac ARM64</a>
+        </div>
+      </div>
+      <img class="screenshot" src="assets/termset.png" alt="termset Terminal Workspace" width="1280" height="800">
+      <div class="install-grid">
+        <div class="install">
+          <span>Linux AMD64</span>
+          <div class="command"><code>curl -fL -o terms https://github.com/liamzebedee/distribution/releases/latest/download/terms-linux-amd64 &amp;&amp; chmod +x terms &amp;&amp; ./terms</code><button type="button" aria-label="Copy termset Linux Command">Copy</button></div>
+        </div>
+        <div class="install">
+          <span>Mac ARM64</span>
+          <div class="command"><code>curl -fL -o terms https://github.com/liamzebedee/distribution/releases/latest/download/terms-macos-arm64 &amp;&amp; chmod +x terms &amp;&amp; ./terms</code><button type="button" aria-label="Copy termset Mac Command">Copy</button></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="site.js" defer></script>
+</body>
+</html>
