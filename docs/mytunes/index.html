@@ -25,8 +25,8 @@
           <img class="product-shot" src="../assets/mytunes-music.png" alt="MyTunes music library" width="1362" height="836" loading="eager">
           <img class="product-shot" src="../assets/mytunes-albums.png" alt="MyTunes albums" width="1362" height="836" loading="eager" hidden>
           <img class="product-shot" src="../assets/mytunes-playlist.png" alt="MyTunes playlist" width="1362" height="836" loading="eager" hidden>
-          <button type="button" class="gallery-previous" aria-label="Previous screenshot">←</button>
-          <button type="button" class="gallery-next" aria-label="Next screenshot">→</button>
+          <button type="button" class="gallery-previous" aria-label="Previous screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7"></path></svg></button>
+          <button type="button" class="gallery-next" aria-label="Next screenshot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7"></path></svg></button>
         </div>
         <div class="gallery-dots" aria-label="Choose screenshot">
           <button type="button" data-slide="0" aria-label="Show music library" aria-current="true"></button>
@@ -34,6 +34,17 @@
           <button type="button" data-slide="2" aria-label="Show playlist"></button>
         </div>
       </div>
+      <section class="product-overview" aria-label="About MyTunes">
+        <p>Hey this is my music manager for Linux! I think it's great. A lot of Linux music apps have weird design where the volume slider is 2 clicks away or the track timeline isn't even shown. I decided to build something that has intuitive controls - like the original iTunes(r) client by Apple.</p>
+        <p>The entire app is pretty laissez-faire, there's intentionally no vendor lock-in. You drop files into <code>~/Music/Library</code>. The app indexes them and their mp3 metadata. That's it. If you don't want the music in your library, just delete it on disk.</p>
+        <p>The music manager syncs natively to iPod Classic! On Linux!! This has to be one of the best parts of the experience. It compresses album art to ensure it's performant on the iPod, it copies playlists, and also downloads any ratings/playcounts from device.</p>
+        <p>It features everything you would expect - tracks, albums, playlists, search, genres. Playlists can be organised into folders like Spotify. You can pin your current fave playlists to the sidebar and unpin them.</p>
+        <p>It works through keyboard control. Ctrl+F to search, tab to navigate tracks using up/down, enter to play.</p>
+        <p>It has a couple cool features - right-click to view lyrics, view Wikipedia for artist/track, bulk metadata editing for tracks.</p>
+        <p>There is built-in YouTube ripping for Linux. I love to use it to download niche covers and DJ sets before they get lost to time.</p>
+        <p>It's intentionally skeumorphic and no-bullshit. The UI is dense and snappy.</p>
+        <p>Finally - it works for macOS too! macOS currently lacks iPod sync and YouTube ripping. But everything else works too. So if you're looking a nice way to curate an MP3 music collection on macOS, go for it.</p>
+      </section>
       <section class="install" id="install" aria-labelledby="install-title">
         <div class="install-line" id="install-title">
           <span>Download and install for</span>

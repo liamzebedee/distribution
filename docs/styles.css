@@ -55,14 +55,19 @@ h1 { margin: 18px 0 24px; font-size: clamp(3rem, 6vw, 4.5rem); line-height: 1.1;
 .gallery-stage { position: relative; }
 .product-shot { display: block; width: 100%; height: auto; border: 1px solid #ddd; border-radius: 16px; background: #fff; }
 .single-shot { width: min(100%, 950px); margin: 76px auto 0; }
-.termset-shot { width: min(100%, 952px); }
-.gallery-stage > button { position: absolute; top: 50%; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; transform: translateY(-50%); border: 1px solid #ddd; border-radius: 50%; color: #333; background: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.product-shot.termset-shot { width: min(100%, 952px); border-radius: 0; }
+.gallery-stage > button { position: absolute; top: 50%; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; transform: translateY(-50%); border: 1px solid #ddd; border-radius: 50%; color: #333; background: #fff; cursor: pointer; }
 .gallery-stage > button:hover { border-color: #999; color: #111; }
+.gallery-stage > button svg { display: block; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .gallery-previous { left: -60px; }
 .gallery-next { right: -60px; }
 .gallery-dots { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
 .gallery-dots button { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: #bbb; cursor: pointer; }
 .gallery-dots button[aria-current="true"] { background: #1a73e8; }
+.product-overview { width: min(100%, 800px); margin: 72px auto 0; }
+.product-overview p { margin: 0 0 1.25em; }
+.product-overview p:last-child { margin-bottom: 0; }
+.product-overview code { font: .9em ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace; }
 .install { width: min(100%, 800px); margin: 96px auto 0; padding-top: 24px; border-top: 1px solid #e5e5e5; scroll-margin-top: 24px; }
 .install-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px; font-size: 1rem; line-height: 1.5; }
 .platform-picker { position: relative; display: inline-block; }
